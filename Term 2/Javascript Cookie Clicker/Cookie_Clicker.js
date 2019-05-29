@@ -39,8 +39,8 @@ function increaseMultiplier() {
     displayMultiplier();
 }
 
-display.Score();
-display.Multiplier();
+displayScore();
+displayMultiplier();
 multiply.disabled = true;
 
 click.addEventListener('click', increaseScore);
