@@ -16,13 +16,8 @@ function displayMultiplier() {
     multiply.value = 'Multiplier x' + multiplier + ' (next: cost ' + multiplierCost + ')';
 }
 
-function buttonsEnabler() {
-    multiplyEnabler();
-}
-
 function increaseScore() {
     score += clickValue;
-    buttonsEnabler();
     displayScore();
 }
 
@@ -34,7 +29,6 @@ function increaseMultiplier() {
         clickValue *= 2;
     }
     multiplierCost *= multiplier;
-    buttonsEnabler();
     displayScore();
     displayMultiplier();
 }
