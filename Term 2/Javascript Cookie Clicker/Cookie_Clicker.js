@@ -1,12 +1,14 @@
 var display = document.getElementById('display');
-var click = document.getElementById('click');
 var multiply = document.getElementById('multiply');
+var cookie = document.getElementById('cookie');
 
 var multiplierCost = 20;
 
 var score = 0;
 var clickValue = 1;
 var multiplier = 1;
+
+cookie.onclick = increaseScore;
 
 function displayScore() {
     display.innerHTML = score;
@@ -15,6 +17,7 @@ function displayScore() {
 function displayMultiplier() {
     multiply.value = 'Multiplier x' + multiplier + ' (next: cost ' + multiplierCost + ')';
 }
+
 
 function increaseScore() {
     score += clickValue;
@@ -39,3 +42,5 @@ multiply.disabled = true;
 
 click.addEventListener('click', increaseScore);
 multiply.addEventListener('click', increaseMultiplier);
+
+
