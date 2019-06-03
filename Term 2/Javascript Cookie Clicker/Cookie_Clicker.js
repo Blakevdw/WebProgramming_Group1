@@ -2,6 +2,7 @@ var display = document.getElementById('display');
 var multiply = document.getElementById('multiply');
 var cookie = document.getElementById('cookie');
 var autoclick = document.getElementById('autoclick');
+var masterlog = document.getElementById('xd');
 
 var multiplierCost = 15;
 var autoclickCost = 50;
@@ -20,7 +21,7 @@ function displayScore() {
 }
 
 function displayMultiplier() {
-    console.log(multiplier);
+    
     multiply.value = 'Multiplier x' + multiplier + ' (next: cost ' + multiplierCost + ')';
 }
 
@@ -31,33 +32,34 @@ function displayAutoclick() {
 function increaseScore() {
     score += clickValue;
     displayScore();
+    Gamelog("Increase Score by 'x'");
 }
 
-function multiplyEnabler() {
-    if (score >= multplierCost) {
-        multiply.disabled = false;
-    } else {
-        multiply.disabled = true;
+
+function increaseMultiplier() {
+    if (score >= multiplierCost) {
+        score -= multiplierCost;
+        multiplier += 1;
+        clickValue = multiplier;
+
+        multiplierCost *= 2;
+        displayScore();
+        displayMultiplier();
+        Gamelog("Increase Multiplier by 'x'");
     }
 }
 
-function increaseMultiplier() {
-    score -= multiplierCost;
-    multiplier += 1;
-    clickValue = multiplier;
-
-    multiplierCost *= multiplier;
-    displayScore();
-    displayMultiplier();
+function Gamelog(message) {
     
+    masterlog.innerHTML += message;
 }
+
+
+
 
 displayScore();
 displayMultiplier();
 autoclick.disabled = true;
 
-click.addEventListener('click', increaseScore);
-multiply.addEventListener('click', increaseMultiplier);
-autoclick.addEventListener('click', enableautoclick);
 
 

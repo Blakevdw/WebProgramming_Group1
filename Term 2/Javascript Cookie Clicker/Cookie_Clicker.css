@@ -1,0 +1,8 @@
+.consolelog {
+    height: 500px;
+    width: 250px;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: grey;
+    border-style: inset;
+
+}
