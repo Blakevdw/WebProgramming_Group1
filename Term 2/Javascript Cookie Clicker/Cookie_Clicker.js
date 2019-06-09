@@ -51,7 +51,7 @@ function increaseMultiplier() {
 
 function Gamelog(message) {
     
-    masterlog.innerHTML += message;
+    masterlog.innerHTML += ("\n" + message);
 }
 
 
